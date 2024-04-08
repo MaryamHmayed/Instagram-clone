@@ -53,7 +53,7 @@ const Login=()=>{
         <div className="inputs-container">
         <input type="password" name="password" placeholder="Password"/>
         </div>
-        <a className="login-button" href="#" target="_blank">Log In</a>
+        <a className="login-button" href="#">Log In</a>
 
         <div className="or-container">
         <div className="line"></div>
@@ -63,14 +63,14 @@ const Login=()=>{
 
 
         <div className="facebook-container">
-        <a className="facebook-login" href="#" target="_blank">
+        <a className="facebook-login" href="#" >
             <img className="facebook-logo"src="./img/facebook-logo.png"/>Log in with Facebook
             </a>
         </div>
     </form>
 
 
-    <a className="password-forgot" href="#" target="_blank">Forgot password?</a>
+    <a className="password-forgot" href="#" >Forgot password?</a>
     </div>
 
 
@@ -84,9 +84,9 @@ const Login=()=>{
     <div class="get-container">
     <p>Get the app.</p>
     <div class="download-container">
-        <a class="download-appstore" href="#" target="_blank"><img class="appstore"
+        <a class="download-appstore" href="#" ><img class="appstore"
             src="./img/googleplay-logo.png"/></a>
-        <a class="download-googleplay" href="#" target="_blank"><img class="googleplay"
+        <a class="download-googleplay" href="#" ><img class="googleplay"
             src="./img/microsoft.png"/></a>
     </div>
     </div>
