@@ -27,7 +27,7 @@
     display: flex;
    
     align-items: center;
-    margin: 64px auto 0;
+    margin: 64px 200px;
     padding-bottom: 64px;
   }
   
@@ -45,9 +45,7 @@
     top: -513px;
     left: 98px;
     opacity: 0;
-    /* animation-name: animation;
-    animation-duration: 25s;
-    animation-iteration-count: infinite; */
+
   }
   
   .user{

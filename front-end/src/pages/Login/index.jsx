@@ -1,9 +1,13 @@
 import React from "react";
 import './style.css';
+import Register from "../Register";
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const Login=()=>{
+    const navigate = useNavigate()
 
 
 
@@ -71,7 +75,9 @@ const Login=()=>{
 
 
     <div className="signup-container">
-    <p>Don't have an account? <a class="signup" href="#" target="_blank">Sign up</a></p>
+    <p>Don't have an account? <a class="signup" onClick={() => {
+          navigate("./signup");
+        }} >Sign up</a></p>
     </div>
 
 
@@ -91,7 +97,7 @@ const Login=()=>{
 
     <footer class="page-footer">
     <span class="footer-span">
-    © 2020 INSTAGRAM FROM FACEBOOK
+    © 2024 Instagram from Meta
     </span>
 
 
