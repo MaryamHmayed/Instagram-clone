@@ -25,7 +25,6 @@
   
   .content-container{
     display: flex;
-   
     align-items: center;
     margin: 64px 200px;
     padding-bottom: 64px;
@@ -72,6 +71,11 @@
   .instagram-logo-box{
     width: 175px;
     margin: 22px 86.5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap :10px
+    
   }
   
   .instagram-logo{
