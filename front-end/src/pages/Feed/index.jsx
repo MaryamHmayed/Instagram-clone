@@ -1,9 +1,12 @@
 import React from "react";
+import Sidebar from "./components/Sidebar/sidebar";
 
 
 
 const Feed = ()=>{
-    return <h2>FEED</h2>
+    return (
+        <Sidebar/>
+    )
 }
 
 
