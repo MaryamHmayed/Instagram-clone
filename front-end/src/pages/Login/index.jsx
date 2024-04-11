@@ -3,7 +3,7 @@ import './style.css';
 import Register from "../Register";
 import { useNavigate } from "react-router-dom";
 import { useEffect,useState } from "react";
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { requestMethods } from "../../core/enums/reqMethods";
 import { sendRequest } from '../../core/remote/request'
 
@@ -27,7 +27,7 @@ const Login=()=>{
         navigate("./feed")
         console.log(response)
     }).catch((error)=>{
-    console.log("login unsuccessful", error.response)
+    console.log("login unsuccessful", error)
 
   })}
 

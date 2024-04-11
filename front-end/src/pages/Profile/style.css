@@ -1,0 +1,13 @@
+.profile-image{
+ width: 200px;
+ height: 200px;
+ border-radius: 50%;
+}
+
+body{
+    padding: 30px 20px;
+}
+
+.profile-info{
+    padding-top: 50px;
+}

@@ -3,13 +3,37 @@ import '../Login/style.css';
 import { useNavigate } from "react-router-dom";
 import './style.css';
 import "../../styles/utilities.css"
+import { requestMethods } from "../../core/enums/reqMethods";
+import { sendRequest } from '../../core/remote/request'
+import { useEffect,useState } from "react";
 
 const Register=()=>{
 
     const navigate= useNavigate()
 
 
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
+
+    useEffect(()=>{
+        handleRegister()
+    },[]);
+        
+
+  const handleRegister =()=>{
+    sendRequest("POST",'/register',{
+        username:username,
+        email:email,
+        password:password,
+    }).then((response)=>{
+        navigate("/")
+        console.log(response)
+    }).catch((error)=>{
+    console.log("signup unsuccessful", error)
+
+  })}
 
 
 
@@ -37,21 +61,26 @@ const Register=()=>{
         <div className="line"></div>
     </div>
 
-    
-
 
     <form id="login-post" method="POST">
         <div className="inputs-container">
-        <input type="text" name="username" placeholder="Email" autoComplete="off"/>
+        <input type="text" name="username" value={username}  placeholder="username" autoComplete="off"
+        onChange={(e) => setUsername(e.target.value)}
+        />
         </div>
         <div className="inputs-container">
-        <input type="username" name="password" placeholder="Username" autoComplete="off"/>
+        <input type="email" name="email" value={email} placeholder="Email" autoComplete="off"
+        onChange={(e) => setEmail(e.target.value)}
+        />
+
         </div>
 
         <div className="inputs-container">
-        <input type="password" name="password" placeholder="Password" autoComplete="off"/>
+        <input type="password" name="password" value={password} placeholder="Password" autoComplete="off"
+        onChange={(e) => setPassword(e.target.value)}
+        />
         </div>
-        <a className="login-button" href="#">Sign Up</a>
+        <a className="login-button" href="#" onClick={handleRegister}>Sign Up</a>
 
 
     </form>
