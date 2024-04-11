@@ -16,7 +16,7 @@ const Register=()=>{
     return (
     <>
      <div className="content-container">
-     <section class="user">
+     <section className="user">
 
     <div className="login-container">
 
@@ -42,14 +42,14 @@ const Register=()=>{
 
     <form id="login-post" method="POST">
         <div className="inputs-container">
-        <input type="text" name="username" placeholder="Email"/>
+        <input type="text" name="username" placeholder="Email" autoComplete="off"/>
         </div>
         <div className="inputs-container">
-        <input type="username" name="password" placeholder="Username"/>
+        <input type="username" name="password" placeholder="Username" autoComplete="off"/>
         </div>
 
         <div className="inputs-container">
-        <input type="password" name="password" placeholder="Password"/>
+        <input type="password" name="password" placeholder="Password" autoComplete="off"/>
         </div>
         <a className="login-button" href="#">Sign Up</a>
 
@@ -65,18 +65,18 @@ const Register=()=>{
 
 
     <div className="signup-container">
-    <p> Have an account? <a class="signup" onClick={() => {
+    <p> Have an account? <a className="signup" onClick={() => {
         navigate("/");
         }} >login</a></p>
     </div>
 
 
-    <div class="get-container">
+    <div className="get-container">
     <p>Get the app.</p>
-    <div class="download-container">
-        <a class="download-appstore" href="#" ><img class="appstore"
+    <div className="download-container">
+        <a className="download-appstore" href="#" ><img className="appstore"
             src="./img/googleplay-logo.png"/></a>
-        <a class="download-googleplay" href="#" ><img class="googleplay"
+        <a className="download-googleplay" href="#" ><img className="googleplay"
             src="./img/microsoft.png"/></a>
     </div>
     </div>
@@ -85,8 +85,8 @@ const Register=()=>{
 
     </div>
 
-    <footer class="page-footer">
-    <span class="footer-span">
+    <footer className="page-footer">
+    <span className="footer-span">
     © 2024 Instagram from Meta
     </span>
 
