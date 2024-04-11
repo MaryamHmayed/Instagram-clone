@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Comment;
+use App\Models\Like;
 
 class PostController extends Controller
 {
@@ -24,7 +26,7 @@ class PostController extends Controller
                 'message' => 'No posts found.'
             ], 404);
         }
-    };
+    
 
     function createPost(Request $req){
         
@@ -47,11 +49,40 @@ class PostController extends Controller
             'message' => 'Post created successfully.',
             'data' => $post
         ]);
-    // function likePost(Request $req){};
-    // function commentPost(Request $req){}
-
-
     }
+       
+     function likePost(Request $request, $post_id){
+    
+        $post = Post::findOrFail($post_id);
+   
+        if ($post->likes()->where('user_id', Auth::id())->exists()) {
+            return response()->json(['message' => 'You have already liked this post.'], 400);
+        }
+
+        $like = new Like();
+        $like->user_id = Auth::id();
+        $post->likes()->save($like);
+
+        return response()->json(['message' => 'You have liked the post.']);
+    }
+
+    function commentOnPost(Request $request, $post_id)
+    {
+ 
+        $post = Post::findOrFail($post_id);
+
+        $comment = new Comment();
+        $comment->user_id = Auth::id();
+        $comment->content = $request->input('content');
+        $post->comments()->save($comment);
+
+        return response()->json(['message' => 'Your comment has been added.']);
+    }
+}
+
+
+
+    
 
     
 
