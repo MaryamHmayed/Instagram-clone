@@ -47,6 +47,10 @@ class PostController extends Controller
             'message' => 'Post created successfully.',
             'data' => $post
         ]);
+    // function likePost(Request $req){};
+    // function commentPost(Request $req){}
+
+
     }
 
     
