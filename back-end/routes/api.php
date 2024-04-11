@@ -26,14 +26,10 @@ Route::post('/follow/{following_id}', [FollowController::class, 'followUser']);
 Route::post('/follow/{following_id}', [FollowController::class, 'unfollowUser']);
 
 
-
-
 Route::get('/posts', [PostController::class, 'viewPosts']);
 Route::post('/addPost', [PostController::class, 'createPost']);
 Route::post('/likePost', [PostController::class, 'likePost']);
 Route::post('/comment', [PostController::class, 'commentOnPost']);
-
-
 
 
 Route::get('/Profile', [PostController::class, 'getProfile']);
